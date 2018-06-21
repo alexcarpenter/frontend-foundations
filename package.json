@@ -1,0 +1,14 @@
+{
+  "name": "front-end-foundations",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Alex Carpenter",
+  "license": "MIT",
+  "scripts": {
+    "build:files": "npx eleventy --config=config/eleventy.config.js --quiet",
+    "serve": "npx eleventy --config=config/eleventy.config.js --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.4.0"
+  }
+}
