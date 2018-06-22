@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ app.title }}</title>
+  <title>{% if title %}{{ title }} – {% endif %}{{ app.title }}</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600" rel="stylesheet">
+  {% set css %}{% include "assets/app.css" %}{% endset %}
+  <style>{{ css | cssmin | safe }}</style>
 </head>
 <body>
-  {{ content | safe }}
+  {% include "components/header.njk" %}
+  <main tabindex="-1">
+    {{ content | safe }}
+  </main>
+  {% include "components/footer.njk" %}
+  {% set js %}{% include "assets/app.js" %}{% endset %}
+  <script>{{ js | jsmin | safe }}</script>
 </body>
 </html>

@@ -1,4 +1,35 @@
 ---
 layout: layout.njk
 ---
-{{ app.title }}
+{% set logoColor = '--color-secondary' %}
+{% include "components/logo.njk" %}
+
+<h1>A resource and network for people learning <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, &amp; Javascript. Mostly for beginners–but everyone is welcome.</h1>
+
+<section>
+  <div class="o-grid">
+    <div class="o-grid__item u-width-2of3">
+      <h2 class="c-heading-section c-heading-decorate">Signup to join our <a href="https://discordapp.com/">Discord</a> community.</h2>
+      {% include "components/form.njk" %}
+    </div>
+
+    <!-- <div class="o-grid__item u-width-1of2">
+      <div class="c-prose">
+        <h2>What to expect</h2>
+        <ul>
+          <li>HTML, vanilla CSS, & vanilla javascript</li>
+          <li>Lorem ipsum dolor.</li>
+          <li>Lorem ipsum dolor. Lorem ipsum.</li>
+        </ul>
+
+        <h2>What not to expect</h2>
+        <ul>
+          <li>The latest and greatest framework</li>
+          <li>Lorem ipsum dolor. Lorem ipsum.</li>
+          <li>Lorem ipsum dolor.</li>
+          <li>Lorem ipsum dolor.</li>
+        </ul>
+      </div>
+    </div> -->
+  </div>
+</section>
