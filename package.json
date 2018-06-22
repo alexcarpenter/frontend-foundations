@@ -6,10 +6,13 @@
   "license": "MIT",
   "scripts": {
     "build": "npx eleventy --config=config/eleventy.config.js --quiet",
-    "serve": "npx eleventy --config=config/eleventy.config.js --serve"
+    "serve": "npx eleventy --config=config/eleventy.config.js --serve",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.4.0",
+    "all-contributors-cli": "^5.2.0",
     "clean-css": "^4.1.11",
     "uglify-js": "^3.4.1"
   }

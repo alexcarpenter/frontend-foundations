@@ -1,4 +1,5 @@
 # 🎒 front-end-foundations
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 > A resource and network for people learning HTML, CSS, & Javascript.
@@ -12,3 +13,7 @@
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+## LICENSE
+
+MIT
