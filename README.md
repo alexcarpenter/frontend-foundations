@@ -7,7 +7,7 @@
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/825855?v=4" width="100px;"/><br /><sub><b>Alex Carpenter</b></sub>](https://alexcarpenter.me)<br />[📖](https://github.com/alexcarpenter/front-end-foundations/commits?author=alexcarpenter "Documentation") |
+| [<img src="https://avatars1.githubusercontent.com/u/825855?v=4" width="100px;"/><br /><sub><b>Alex Carpenter</b></sub>](https://alexcarpenter.me)<br />[📖](https://github.com/alexcarpenter/front-end-foundations/commits?author=alexcarpenter "Documentation") [💻](https://github.com/alexcarpenter/front-end-foundations/commits?author=alexcarpenter "Code") [🤔](#ideas-alexcarpenter "Ideas, Planning, & Feedback") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
