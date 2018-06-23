@@ -32,7 +32,7 @@ html {
 }
 
 body {
-  max-width: 960px;
+  max-width: 980px;
   margin-right: auto;
   margin-left: auto;
   padding: 4rem 1rem;
@@ -63,6 +63,10 @@ a {
 a:hover,
 a:focus {
   color: var(--color-primary);
+}
+
+small {
+  line-height: 1.3;
 }
 
 abbr {
@@ -159,11 +163,9 @@ abbr {
  */
 
 .c-heading-title {
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: 2rem;
   line-height: 1;
-  border-bottom: 1px solid var(--color-gray-70);
 }
 
 .c-heading-title:after {
@@ -175,10 +177,6 @@ abbr {
 
 .c-heading-intro {
   font-size: 2rem;
-}
-
-.c-heading-section {
-  margin-bottom: 2rem;
 }
 
 .c-heading-decorate:after {
@@ -253,7 +251,13 @@ abbr {
   padding: 0.75rem;
   font: inherit;
   border: 1px solid #ccc;
+  background-color: var(--color-gray-100);
   resize: none;
+}
+
+.c-form__help {
+  display: inline-block;
+  padding-top: 0.5rem;
 }
 
 
