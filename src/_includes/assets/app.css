@@ -81,8 +81,10 @@ abbr {
 
 @media screen and (min-width: 600px) {
   .o-columns {
-    column-count: 2;
-    column-gap: 2rem;
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2rem;
+            column-gap: 2rem;
   }
 }
 
@@ -198,7 +200,9 @@ abbr {
  */
 
 .c-button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 0.75rem 1rem;
   background-color: var(--color-secondary);
   color: #fff;
