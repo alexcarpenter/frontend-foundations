@@ -1,3 +1,3 @@
-# front-end-foundations
+# frontend-foundations
 
-> A resource and network for people learning HTML, CSS, & Javascript.
+> A resource and community for developers learning HTML, CSS, & Javascript.
