@@ -4,7 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} – {% endif %}{{ app.title }}</title>
-    <meta name="description" content="{{ app.description }}" />
+  <meta name="description" content="{{ app.description }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/manifest.json">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#397DFB">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
+  <meta name="theme-color" content="#397DFB">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600" rel="stylesheet">
   {% set css %}{% include "assets/app.css" %}{% endset %}
   <style>{{ css | cssmin | safe }}</style>

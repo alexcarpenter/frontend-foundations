@@ -15,6 +15,8 @@ module.exports = function(eleventyConfig) {
     return minified.code;
   });
 
+  eleventyConfig.addPassthroughCopy("icons");
+
   return {
     templateFormats: [
       "njk",
