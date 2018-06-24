@@ -38,6 +38,7 @@ body {
   padding: 4rem 1rem;
   font-family: var(--font-family-sans-serif);
   color: var(--color-gray-0);
+  overflow-x: hidden;
 }
 
 main {
@@ -269,8 +270,12 @@ abbr {
   max-width: 60ch;
 }
 
-.c-prose > *:not(:last-child) {
+.c-prose > *:not(:last-child):not(section) {
   margin-bottom: 1rem;
+}
+
+.c-prose section:not(:last-of-type) {
+  margin-bottom: 4rem;
 }
 
 .c-prose ul,
