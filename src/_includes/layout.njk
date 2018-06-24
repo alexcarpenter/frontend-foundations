@@ -19,8 +19,9 @@
   <style>{{ css | cssmin | safe }}</style>
 </head>
 <body>
+  <a class="c-skip-to" href="#main-content">Skip to main content</a>
   {% include "components/header.njk" %}
-  <main tabindex="-1">
+  <main id="main-content" tabindex="-1">
     {{ content | safe }}
   </main>
   {% include "components/footer.njk" %}
