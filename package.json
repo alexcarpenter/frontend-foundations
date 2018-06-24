@@ -7,6 +7,7 @@
   "scripts": {
     "build": "npx eleventy --config=config/eleventy.config.js --quiet",
     "serve": "npx eleventy --config=config/eleventy.config.js --serve",
+    "clean": "rm -rf www",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate"
   },
