@@ -1,20 +1,21 @@
 {
+    "lang": "en",
     "name": "Front-end Foundations",
     "short_name": "FF",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/icons/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/icons/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#397DFB",
-    "background_color": "#ffffff",
     "start_url": "/",
-    "display": "minimal-ui"
+    "display": "minimal-ui",
+    "background_color": "#ffffff",
+    "theme_color": "#397dfb"
 }
