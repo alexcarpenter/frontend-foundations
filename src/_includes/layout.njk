@@ -27,5 +27,12 @@
   {% include "components/footer.njk" %}
   {% set js %}{% include "assets/app.js" %}{% endset %}
   <script>{{ js | jsmin | safe }}</script>
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js', {
+        scope: '/'
+      });
+    }
+  </script>
 </body>
 </html>
