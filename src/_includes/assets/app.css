@@ -17,38 +17,6 @@
 
 
 /* ==========================================================================
-   Fonts
-   ========================================================================== */
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Poppins Regular'), local('Poppins-Regular'),
-       url('/assets/fonts/poppins-v5-latin-regular.woff2') format('woff2'),
-       url('/assets/fonts/poppins-v5-latin-regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Poppins Italic'), local('Poppins-Italic'),
-       url('/assets/fonts/poppins-v5-latin-italic.woff2') format('woff2'),
-       url('/assets/fonts/poppins-v5-latin-italic.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Poppins Bold'), local('Poppins-Bold'),
-       url('/assets/fonts/poppins-v5-latin-700.woff2') format('woff2'),
-       url('/assets/fonts/poppins-v5-latin-700.woff') format('woff');
-}
-
-
-/* ==========================================================================
    BASE
    ========================================================================== */
 
