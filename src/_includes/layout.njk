@@ -14,7 +14,8 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="/icons/browserconfig.xml">
   <meta name="theme-color" content="#397DFB">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,700" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/poppins-v5-latin-regular.woff2" type="font/woff2" as="font" crossorigin/>
+  <link rel="preload" href="/assets/fonts/poppins-v5-latin-700.woff2" type="font/woff2" as="font" crossorigin/>
   {% set css %}{% include "assets/app.css" %}{% endset %}
   <style>{{ css | cssmin | safe }}</style>
 </head>

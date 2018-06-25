@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
     return minified.code;
   });
 
+  eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/icons");
   eleventyConfig.addPassthroughCopy("src/sw.js");
 
