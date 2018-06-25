@@ -16,6 +16,7 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("src/icons");
+  eleventyConfig.addPassthroughCopy("src/sw.js");
 
   return {
     templateFormats: [
