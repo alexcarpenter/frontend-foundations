@@ -1,0 +1,14 @@
+{% extends 'layouts/default.njk' %}
+{# Import components #}
+{% from 'components/page-header.njk' import pageHeader %}
+
+{% block content %}
+  {{ pageHeader({
+    title: title,
+    description: description
+  }) }}
+
+  <div class="c-prose">
+    {{ content | safe }}
+  </div>
+{% endblock %}

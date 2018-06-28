@@ -31,6 +31,8 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addLayoutAlias('default', 'layouts/default.njk')
+  eleventyConfig.addLayoutAlias('markdown', 'layouts/markdown.njk')
+  eleventyConfig.addLayoutAlias('page', 'layouts/page.njk')
 
   eleventyConfig.addPassthroughCopy('src/assets')
   eleventyConfig.addPassthroughCopy('src/icons')

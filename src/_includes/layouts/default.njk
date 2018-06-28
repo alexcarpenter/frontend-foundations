@@ -22,7 +22,7 @@
   <a class="c-skip-to" href="#main-content">Skip to main content</a>
   {% include "components/header.njk" %}
   <main id="main-content" tabindex="-1">
-    {{ content | safe }}
+    {% block content %}{% endblock %}
   </main>
   {% include "components/footer.njk" %}
   {% set js %}{% include "assets/app.js" %}{% endset %}

@@ -1,35 +1,38 @@
 ---
-layout: default
 permalink: /index.html
 ---
-<h1 class="c-heading-intro">A resource and community for developers learning <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, &amp; Javascript. Mostly for beginners–but everyone is welcome.</h1>
+{% extends "layouts/default.njk" %}
 
-<section>
-  <div class="o-grid">
-    <div class="o-grid__item u-width-1of2">
-      <div class="c-prose">
-        <h2 class="c-heading-decorate">Join our <a href="https://discordapp.com/">Discord</a> community</h2>
-        <p>While we are building out some ideas, feel free to join our Discord community to start connecting with other front-end developers.</p>
-        {% include "components/form.njk" %}
+{% block content %}
+  <h1 class="c-heading-intro">A resource and community for developers learning <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, &amp; Javascript. Mostly for beginners–but everyone is welcome.</h1>
+
+  <section>
+    <div class="o-grid">
+      <div class="o-grid__item u-width-1of2">
+        <div class="c-prose">
+          <h2 class="c-heading-decorate">Join our <a href="https://discordapp.com/">Discord</a> community</h2>
+          <p>While we are building out some ideas, feel free to join our Discord community to start connecting with other front-end developers.</p>
+          {% include "components/form.njk" %}
+        </div>
+      </div>
+
+      <div class="o-grid__item u-width-1of2">
+        <div class="c-prose">
+          <h2 class="c-heading-decorate">Mission</h2>
+          <p>It is our mission to help entry level front-end developers find their first job.</p>
+
+          <br>
+
+          <h2 class="c-heading-decorate">Roadmap</h2>
+          <ul>
+            <li>Job board for entry level developers</li>
+            <li>Monthly or bi-monthly <abbr title="Ask Me Anything">AMA</abbr>'s</li>
+            <li>Blog tutorials and resources</li>
+            <li>YouTube screencasts</li>
+            <li>Maybe someday a conference</li>
+          </ul>
+        </div>
       </div>
     </div>
-
-    <div class="o-grid__item u-width-1of2">
-      <div class="c-prose">
-        <h2 class="c-heading-decorate">Mission</h2>
-        <p>It is our mission to help entry level front-end developers find their first job.</p>
-
-        <br>
-
-        <h2 class="c-heading-decorate">Roadmap</h2>
-        <ul>
-          <li>Job board for entry level developers</li>
-          <li>Monthly or bi-monthly <abbr title="Ask Me Anything">AMA</abbr>'s</li>
-          <li>Blog tutorials and resources</li>
-          <li>YouTube screencasts</li>
-          <li>Maybe someday a conference</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+{% endblock %}

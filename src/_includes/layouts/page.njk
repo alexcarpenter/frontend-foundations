@@ -1,0 +1,20 @@
+{% extends 'layouts/default.njk' %}
+{# Import components #}
+{% from 'components/page-header.njk' import pageHeader %}
+
+{% block content %}
+  {{ pageHeader({
+    title: title,
+    description: description
+  }) }}
+
+  <div class="o-layout">
+    <div class="o-layout__primary">
+      {% block primary %}{% endblock %}
+    </div>
+
+    <div class="o-layout__secondary">
+      {% block secondary %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}

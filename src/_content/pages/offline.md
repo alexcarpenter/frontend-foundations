@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: markdown
 title: Offline
 permalink: /offline/index.html
 ---

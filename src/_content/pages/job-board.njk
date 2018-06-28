@@ -1,20 +1,28 @@
 ---
-layout: default
 title: Job Board
 permalink: /job-board/index.html
 ---
-{% from 'components/page-header.njk' import pageHeader %}
+{% extends 'layouts/page.njk' %}
+{# Import components #}
 {% from 'components/job-listing.njk' import jobListing %}
 
-{{ pageHeader({ title: title }) }}
+{% block primary %}
+  <ul class="c-entry-listing">
+    {% for item in collections.jobs %}
+      <li class="c-entry-listing__item">
+        {{ jobListing({
+          date: item.data.date,
+          title: item.data.title,
+          company: item.data.company,
+          type: item.data.type,
+          remote: item.data.remote,
+          description: item.templateContent
+        }) }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
 
-{% for item in collections.jobs %}
-  {{ jobListing({
-    date: item.data.date,
-    title: item.data.title,
-    company: item.data.company,
-    type: item.data.type,
-    remote: item.data.remote,
-    description: item.templateContent
-  }) }}
-{% endfor %}
+{% block secondary %}
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ipsum adipisci similique? Alias aperiam molestias consequatur sed dicta necessitatibus, libero excepturi. Unde obcaecati magnam fugit voluptatem! Beatae maxime alias praesentium!
+{% endblock %}
