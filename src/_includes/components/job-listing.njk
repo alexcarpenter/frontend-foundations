@@ -1,8 +1,8 @@
 {% macro jobListing(params) %}
 <article class="c-job-listing">
-  <time>Posted on {{ params.date }}</time>
-  <h2 class="c-job-listing__title">{{ params.title }}</h2>
-  <span>{{ params.company }}</span>
+  <time>Posted on {{ params.date | readableDate }}</time>
+  <h2 class="c-job-listing__title">{{ params.title }} at {{ params.company }}</h2>
+  <p>{{ params.type }} &bullet; {{ params.remote }}</p>
   <div class="c-job-listing__description">
     {{- params.description | safe -}}
   </div>

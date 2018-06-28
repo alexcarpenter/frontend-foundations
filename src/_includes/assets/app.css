@@ -345,8 +345,15 @@ svg {
  */
 
 .c-job-listing {
-  padding-top: 1rem;
-  border-top: 5px solid var(--color-gray-70);
+}
+
+.c-job-listing__description > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.c-job-listing__description ul,
+.c-job-listing__description ol {
+  padding-left: 1.2rem;
 }
 
 /**

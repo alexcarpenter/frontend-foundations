@@ -19,25 +19,9 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter('permalink', str => str.replace(/\.html/g, ''))
 
-  eleventyConfig.addFilter('date_to_short_string', obj => {
-    const date = parseDate(obj)
-    return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_SHORT)
-  })
-
-  eleventyConfig.addFilter('date_to_medium_string', obj => {
-    const date = parseDate(obj)
-    return DateTime.fromJSDate(date).toLocaleString(DateTime.DATE_MED)
-  })
-
-  eleventyConfig.addFilter('datetime_to_long_string', obj => {
-    const date = parseDate(obj)
-    return DateTime.fromJSDate(date).toLocaleString(DateTime.DATETIME_FULL)
-  })
-
-  eleventyConfig.addFilter('datetime_to_iso', obj => {
-    const date = parseDate(obj)
-    return DateTime.fromJSDate(date).toISO()
-  })
+  eleventyConfig.addFilter('readableDate', dateObj =>
+    DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy'),
+  )
 
   eleventyConfig.addCollection('jobs', collection => {
     return collection
