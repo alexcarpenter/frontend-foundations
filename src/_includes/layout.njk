@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} – {% endif %}{{ app.title }}</title>
+  <title>{% if title != '' %}{{ title | striptags }} – {% endif %}{{ app.title }}</title>
   <meta name="description" content="{{ app.description }}" />
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -13,6 +13,14 @@
   <link rel="shortcut icon" href="/icons/favicon.ico">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="/icons/browserconfig.xml">
+  <meta property="og:title" content="{% if title != '' %}{{ title }}{% else %}{{ app.title }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% elif content %}{{ content | striptags | truncate(200) }}{% else %}{{ app.description }}{% endif %}">
+  <meta property="og:url" content="{{ page.url | prepend(app.url) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ app.url }}/og-image.png">
+  <meta name="twitter:creator" content="{% if creator %}@{{ creator }}{% else %}@FEFoundations{% endif %}">
+  <meta name="twitter:site" content="@FEFoundations">
+  <meta name="twitter:image" property="og:image" content="{{ app.url }}/og-image.png" />
   <meta name="theme-color" content="#397DFB">
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,700" rel="stylesheet">
   {% set css %}{% include "assets/app.css" %}{% endset %}

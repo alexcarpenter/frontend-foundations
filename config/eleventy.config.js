@@ -15,6 +15,11 @@ module.exports = function(eleventyConfig) {
     return minified.code;
   });
 
+  eleventyConfig.addNunjucksFilter("prepend", function(value, prepender) {
+    return value === '/' ? prepender : prepender + value;
+  });
+
+
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/icons");
   eleventyConfig.addPassthroughCopy("src/sw.js");
