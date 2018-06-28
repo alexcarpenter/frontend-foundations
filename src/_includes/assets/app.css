@@ -2,7 +2,6 @@
    SETTINGS
    ========================================================================== */
 
-
 :root {
   --font-family-sans-serif: 'Poppins', sans-serif;
   --color-primary: #397dfb;
@@ -15,11 +14,9 @@
   --grid-gutter-size: 4rem;
 }
 
-
 /* ==========================================================================
    BASE
    ========================================================================== */
-
 
 * {
   margin: 0;
@@ -49,8 +46,12 @@ main > * {
   margin-bottom: 4rem;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.3;
 }
@@ -58,7 +59,7 @@ h4, h5, h6 {
 a {
   color: inherit;
   -webkit-text-decoration-color: var(--color-primary);
-          text-decoration-color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
 }
 
 a:hover,
@@ -91,11 +92,9 @@ svg {
   vertical-align: middle;
 }
 
-
 /* ==========================================================================
    OBJECTS
    ========================================================================== */
-
 
 /**
  * Grid
@@ -106,7 +105,8 @@ svg {
   display: flex;
   flex-flow: row wrap;
   max-width: 100vw;
-  margin: 0 calc(-0.5 * var(--grid-gutter-size)) calc(-1 * var(--grid-gutter-size));
+  margin: 0 calc(-0.5 * var(--grid-gutter-size))
+    calc(-1 * var(--grid-gutter-size));
 }
 
 .o-grid__item {
@@ -115,7 +115,6 @@ svg {
   margin-bottom: var(--grid-gutter-size);
   padding: 0 calc(0.5 * var(--grid-gutter-size));
 }
-
 
 /**
  * Wrapper
@@ -127,29 +126,28 @@ svg {
   margin-left: auto;
 }
 
-
 /**
  * Ratio
  */
 
-[style*="--aspect-ratio"] > :first-child {
+[style*='--aspect-ratio'] > :first-child {
   height: auto;
   width: 100%;
 }
 
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
+@supports (--custom: property) {
+  [style*='--aspect-ratio'] {
     position: relative;
     background-color: var(--color-gray-0);
   }
 
-  [style*="--aspect-ratio"]::before {
-    content: "";
+  [style*='--aspect-ratio']::before {
+    content: '';
     display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
 
-  [style*="--aspect-ratio"] > :first-child {
+  [style*='--aspect-ratio'] > :first-child {
     position: absolute;
     top: 0;
     left: 0;
@@ -157,11 +155,9 @@ svg {
   }
 }
 
-
 /* ==========================================================================
    COMPONENTS
    ========================================================================== */
-
 
 /**
  * Skip link
@@ -180,8 +176,6 @@ svg {
   transform: translateY(0);
 }
 
-
-
 /**
  * Headings
  */
@@ -193,10 +187,10 @@ svg {
 }
 
 .c-heading-title:after {
-  content: "\2009\00AC";
+  content: '\2009\00AC';
   display: inline-block;
   color: currentColor;
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .c-heading-intro {
@@ -204,10 +198,10 @@ svg {
 }
 
 .c-heading-decorate:after {
-  content: "\2009\00AC";
+  content: '\2009\00AC';
   display: inline-block;
   color: currentColor;
-  opacity: .25;
+  opacity: 0.25;
 }
 
 @media screen and (min-width: 600px) {
@@ -216,7 +210,6 @@ svg {
     font-size: 3.25rem;
   }
 }
-
 
 /**
  * Header
@@ -234,6 +227,35 @@ svg {
   background-color: transparent;
 }
 
+/**
+ * Page header
+ */
+
+.c-page-header {
+}
+
+.c-page-header__title {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .c-page-header__title {
+    font-size: 3.25rem;
+  }
+}
+
+.c-page-header__title:after {
+  content: '\2009\00AC';
+  display: inline-block;
+  color: currentColor;
+  opacity: 0.25;
+}
+
+.c-page-header__description {
+  padding-top: 1rem;
+  font-size: 1.25rem;
+}
 
 /**
  * Button
@@ -241,8 +263,8 @@ svg {
 
 .c-button {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 0.75rem 1rem;
   background-color: var(--color-tertiary);
   color: var(--color-gray-0);
@@ -258,7 +280,6 @@ svg {
   background-color: var(--color-gray-0);
   color: #fff;
 }
-
 
 /**
  * Form
@@ -292,7 +313,6 @@ svg {
   padding-top: 0.5rem;
 }
 
-
 /**
  * Prose
  */
@@ -320,6 +340,14 @@ svg {
   margin-bottom: 0.5rem !important;
 }
 
+/**
+ * Job Listing
+ */
+
+.c-job-listing {
+  padding-top: 1rem;
+  border-top: 5px solid var(--color-gray-70);
+}
 
 /**
  * Footer
@@ -347,11 +375,9 @@ svg {
   }
 }
 
-
 /* ==========================================================================
    UTILITIES
    ========================================================================== */
-
 
 /**
  * Widths
@@ -374,7 +400,6 @@ svg {
   }
 }
 
-
 /**
  * Spin
  */
@@ -382,33 +407,33 @@ svg {
 .u-spin {
   position: relative;
   -webkit-animation-name: spin;
-          animation-name: spin;
+  animation-name: spin;
   -webkit-animation-duration: 4000ms;
-          animation-duration: 4000ms;
+  animation-duration: 4000ms;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

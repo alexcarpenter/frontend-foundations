@@ -1,0 +1,10 @@
+{% macro jobListing(params) %}
+<article class="c-job-listing">
+  <time>Posted on {{ params.date }}</time>
+  <h2 class="c-job-listing__title">{{ params.title }}</h2>
+  <span>{{ params.company }}</span>
+  <div class="c-job-listing__description">
+    {{- params.description | safe -}}
+  </div>
+</article>
+{% endmacro %}

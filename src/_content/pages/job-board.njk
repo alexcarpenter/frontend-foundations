@@ -1,0 +1,18 @@
+---
+layout: default
+title: Job Board
+permalink: /job-board/index.html
+---
+{% from 'components/page-header.njk' import pageHeader %}
+{% from 'components/job-listing.njk' import jobListing %}
+
+{{ pageHeader({ title: title }) }}
+
+{% for item in collections.jobs %}
+  {{ jobListing({
+    date: item.data.date,
+    title: item.data.title,
+    company: item.data.company,
+    description: item.templateContent
+  }) }}
+{% endfor %}
