@@ -141,7 +141,6 @@ svg {
   }
 }
 
-
 /**
  * Ratio
  */
@@ -281,6 +280,7 @@ svg {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  display: inline-block;
   padding: 0.75rem 1rem;
   background-color: var(--color-tertiary);
   color: var(--color-gray-0);
@@ -289,6 +289,7 @@ svg {
   border: 0;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
+  text-decoration: none;
 }
 
 .c-button:hover,
@@ -343,7 +344,6 @@ svg {
   border-bottom: 1px solid var(--color-gray-70);
 }
 
-
 /**
  * Prose
  */
@@ -380,6 +380,7 @@ svg {
 
 .c-job-listing__branding {
   margin-left: 1rem;
+  margin-top: 0.5rem;
   float: right;
 }
 
@@ -405,6 +406,35 @@ svg {
 .c-job-listing__description ul,
 .c-job-listing__description ol {
   padding-left: 1.2rem;
+}
+
+/**
+ * Notice
+ */
+
+.c-notice {
+  padding: 2rem;
+  background-color: var(--color-gray-100);
+  border: 5px solid var(--color-gray-70);
+}
+
+.c-notice__icon {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.c-notice__title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.c-notice__description {
+  margin-bottom: 2rem;
+}
+
+.c-notice__description > *:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 /**

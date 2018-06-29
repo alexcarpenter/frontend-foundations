@@ -1,0 +1,16 @@
+{% macro notice(params) %}
+<div class="c-notice">
+  {% if params.icon %}
+    <div class="c-notice__icon">
+      {{ params.icon | safe }}
+    </div>
+  {% endif %}
+  <h2 class="c-notice__title">{{ params.title }}</h2>
+  <div class="c-notice__description">
+    {{ params.description | safe }}
+  </div>
+  {% if params.link %}
+    <a href="{{ params.link.url | safe }}" class="c-button">{{ params.link.text }}</a>
+  {% endif %}
+</div>
+{% endmacro %}
