@@ -383,6 +383,11 @@ svg {
   float: right;
 }
 
+.c-job-listing__branding img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 .c-job-listing__header {
   margin-bottom: 1rem;
 }
