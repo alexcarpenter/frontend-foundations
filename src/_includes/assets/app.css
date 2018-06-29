@@ -378,6 +378,21 @@ svg {
 .c-job-listing {
 }
 
+.c-job-listing__branding {
+  margin-left: 1rem;
+  float: right;
+}
+
+.c-job-listing__header {
+  margin-bottom: 1rem;
+}
+
+.c-job-listing__title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
 .c-job-listing__description > *:not(:last-child) {
   margin-bottom: 0.5rem;
 }

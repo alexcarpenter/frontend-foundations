@@ -10,8 +10,4 @@ status: open
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maxime officiis, in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maxime officiis, in.
 
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maxime officiis, in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maxime officiis, in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maxime officiis, in.

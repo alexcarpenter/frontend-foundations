@@ -1,8 +1,13 @@
 {% macro jobListing(params) %}
 <article class="c-job-listing">
-  <time>Posted on {{ params.date | readableDate }}</time>
-  <h2 class="c-job-listing__title">{{ params.title }} at {{ params.company }}</h2>
-  <p>{{ params.type }} &bullet; {{ params.remote }}</p>
+  <div class="c-job-listing__branding">
+    <img src="http://placehold.it/75x75" alt="">
+  </div>
+  <header class="c-job-listing__header">
+    <time>Posted on {{ params.date | readableDate }}</time>
+    <h2 class="c-job-listing__title"><a href="">{{ params.title }} at {{ params.company }}</a></h2>
+    <p>Type: {{ params.type }} &bullet; Location: {% if params.remote === true %}Remote{% else %}{{ params.location }}{% endif %}</p>
+  </header>
   <div class="c-job-listing__description">
     {{- params.description | safe -}}
   </div>
