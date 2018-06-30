@@ -1,0 +1,19 @@
+---
+permalink: /jobs.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>{{ app.url }}{{ page.url }}</id>
+  <title>{{ app.title }}</title>
+  <link href="{{ app.url }}/jobs.xml" rel="self" type="application/atom+xml"/>
+  <link href="{{ app.url }}" rel="alternate" type="text/html"/>
+{%- for item in collections.jobs %}
+  <entry>
+    <title>{{ item.data.title }} at {{ item.data.company }}</title>
+    <updated>{{ item.data.date }}</updated>
+    <content type="html"><![CDATA[
+      {{- item.templateContent | safe -}}
+    ]]></content>
+  </entry>
+{% endfor -%}
+</feed>

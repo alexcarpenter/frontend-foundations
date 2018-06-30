@@ -29,7 +29,7 @@ html {
 }
 
 body {
-  max-width: 1100px;
+  max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding: 4rem 1rem;
@@ -246,7 +246,11 @@ svg {
  * Page header
  */
 
-.c-page-header {
+@media screen and (min-width: 720px) {
+  .c-page-header {
+    padding-right: 2rem;
+    max-width: calc((2 / 3) * 100%);
+  }
 }
 
 .c-page-header__title {
