@@ -1,6 +1,5 @@
 ---
 title: Job Board
-description: Front-end Foundations is a community for entry level developers looking for new opportunities.
 permalink: /job-board/index.html
 ---
 {% extends 'layouts/page.njk' %}
@@ -31,7 +30,7 @@ permalink: /job-board/index.html
     {% endset %}
 
     {% set noticeDescription %}
-      <p>In the meantime subscribe to our job board <a href="/jobs.xml">RSS feed</a> to keep up to date when new listings are posted.</p>
+      <p>In the meantime if you are looking for a job–subscribe to our job board <a href="/jobs.xml">RSS feed</a> to keep up to date when new listings are posted.</p>
       <p>Are you a company looking to hire an entry level developer?</p>
     {% endset %}
 
@@ -40,7 +39,7 @@ permalink: /job-board/index.html
       title: 'Unfortunately there are not any job listings at the moment.',
       description: noticeDescription,
       link: {
-        url: 'mailto:im.alexcarpenter@gmail.com',
+        url: 'mailto:im.alexcarpenter@gmail.com?subject=' + 'Front-end Foundations Job Listing Submission' | urlencode,
         text: 'Submit a job listing'
       }
     }) }}
