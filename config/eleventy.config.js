@@ -26,6 +26,10 @@ module.exports = function(eleventyConfig) {
     DateTime.fromJSDate(dateObj).toFormat('dd LLL yyyy'),
   )
 
+  eleventyConfig.addNunjucksFilter('prepend', function(value, prepender) {
+    return value === '/' ? prepender : prepender + value
+  })
+
   eleventyConfig.addCollection('jobs', collection => {
     return collection
       .getFilteredByGlob('**/jobs/**/!(index)*.md')
