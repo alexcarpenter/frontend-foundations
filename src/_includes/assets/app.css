@@ -2,7 +2,6 @@
    SETTINGS
    ========================================================================== */
 
-
 :root {
   --font-family-sans-serif: 'Poppins', sans-serif;
   --color-primary: #397dfb;
@@ -15,11 +14,9 @@
   --grid-gutter-size: 4rem;
 }
 
-
 /* ==========================================================================
    BASE
    ========================================================================== */
-
 
 * {
   margin: 0;
@@ -32,7 +29,7 @@ html {
 }
 
 body {
-  max-width: 980px;
+  max-width: 1000px;
   margin-right: auto;
   margin-left: auto;
   padding: 4rem 1rem;
@@ -49,8 +46,12 @@ main > * {
   margin-bottom: 4rem;
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.3;
 }
@@ -58,7 +59,7 @@ h4, h5, h6 {
 a {
   color: inherit;
   -webkit-text-decoration-color: var(--color-primary);
-          text-decoration-color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
 }
 
 a:hover,
@@ -91,11 +92,9 @@ svg {
   vertical-align: middle;
 }
 
-
 /* ==========================================================================
    OBJECTS
    ========================================================================== */
-
 
 /**
  * Grid
@@ -106,7 +105,8 @@ svg {
   display: flex;
   flex-flow: row wrap;
   max-width: 100vw;
-  margin: 0 calc(-0.5 * var(--grid-gutter-size)) calc(-1 * var(--grid-gutter-size));
+  margin: 0 calc(-0.5 * var(--grid-gutter-size))
+    calc(-1 * var(--grid-gutter-size));
 }
 
 .o-grid__item {
@@ -115,7 +115,6 @@ svg {
   margin-bottom: var(--grid-gutter-size);
   padding: 0 calc(0.5 * var(--grid-gutter-size));
 }
-
 
 /**
  * Wrapper
@@ -127,29 +126,43 @@ svg {
   margin-left: auto;
 }
 
+/**
+ * Layout
+ */
+
+.o-layout {
+  display: grid;
+  grid-gap: 4rem;
+}
+
+@media screen and (min-width: 720px) {
+  .o-layout {
+    grid-template-columns: auto 33.3333333333%;
+  }
+}
 
 /**
  * Ratio
  */
 
-[style*="--aspect-ratio"] > :first-child {
+[style*='--aspect-ratio'] > :first-child {
   height: auto;
   width: 100%;
 }
 
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
+@supports (--custom: property) {
+  [style*='--aspect-ratio'] {
     position: relative;
     background-color: var(--color-gray-0);
   }
 
-  [style*="--aspect-ratio"]::before {
-    content: "";
+  [style*='--aspect-ratio']::before {
+    content: '';
     display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
 
-  [style*="--aspect-ratio"] > :first-child {
+  [style*='--aspect-ratio'] > :first-child {
     position: absolute;
     top: 0;
     left: 0;
@@ -157,11 +170,9 @@ svg {
   }
 }
 
-
 /* ==========================================================================
    COMPONENTS
    ========================================================================== */
-
 
 /**
  * Skip link
@@ -180,8 +191,6 @@ svg {
   transform: translateY(0);
 }
 
-
-
 /**
  * Headings
  */
@@ -193,10 +202,10 @@ svg {
 }
 
 .c-heading-title:after {
-  content: "\2009\00AC";
+  content: '\2009\00AC';
   display: inline-block;
   color: currentColor;
-  opacity: .25;
+  opacity: 0.25;
 }
 
 .c-heading-intro {
@@ -204,10 +213,10 @@ svg {
 }
 
 .c-heading-decorate:after {
-  content: "\2009\00AC";
+  content: '\2009\00AC';
   display: inline-block;
   color: currentColor;
-  opacity: .25;
+  opacity: 0.25;
 }
 
 @media screen and (min-width: 600px) {
@@ -216,7 +225,6 @@ svg {
     font-size: 3.25rem;
   }
 }
-
 
 /**
  * Header
@@ -234,6 +242,39 @@ svg {
   background-color: transparent;
 }
 
+/**
+ * Page header
+ */
+
+@media screen and (min-width: 720px) {
+  .c-page-header {
+    padding-right: 2rem;
+    max-width: calc((2 / 3) * 100%);
+  }
+}
+
+.c-page-header__title {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .c-page-header__title {
+    font-size: 3.25rem;
+  }
+}
+
+.c-page-header__title:after {
+  content: '\2009\00AC';
+  display: inline-block;
+  color: currentColor;
+  opacity: 0.25;
+}
+
+.c-page-header__description {
+  padding-top: 1rem;
+  font-size: 1.25rem;
+}
 
 /**
  * Button
@@ -241,8 +282,9 @@ svg {
 
 .c-button {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
   padding: 0.75rem 1rem;
   background-color: var(--color-tertiary);
   color: var(--color-gray-0);
@@ -251,6 +293,7 @@ svg {
   border: 0;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
+  text-decoration: none;
 }
 
 .c-button:hover,
@@ -258,7 +301,6 @@ svg {
   background-color: var(--color-gray-0);
   color: #fff;
 }
-
 
 /**
  * Form
@@ -292,6 +334,19 @@ svg {
   padding-top: 0.5rem;
 }
 
+/**
+ * Entry listing
+ */
+
+.c-entry-listing {
+  list-style: none;
+}
+
+.c-entry-listing__item:not(:last-of-type) {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-gray-70);
+}
 
 /**
  * Prose
@@ -320,6 +375,71 @@ svg {
   margin-bottom: 0.5rem !important;
 }
 
+/**
+ * Job Listing
+ */
+
+.c-job-listing {
+}
+
+.c-job-listing__branding {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  float: right;
+}
+
+.c-job-listing__branding img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.c-job-listing__header {
+  margin-bottom: 1rem;
+}
+
+.c-job-listing__title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.c-job-listing__description > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.c-job-listing__description ul,
+.c-job-listing__description ol {
+  padding-left: 1.2rem;
+}
+
+/**
+ * Notice
+ */
+
+.c-notice {
+  padding: 2rem;
+  background-color: var(--color-gray-100);
+  border: 5px solid var(--color-gray-70);
+}
+
+.c-notice__icon {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.c-notice__title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.c-notice__description {
+  margin-bottom: 2rem;
+}
+
+.c-notice__description > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
 
 /**
  * Footer
@@ -347,11 +467,9 @@ svg {
   }
 }
 
-
 /* ==========================================================================
    UTILITIES
    ========================================================================== */
-
 
 /**
  * Widths
@@ -374,7 +492,6 @@ svg {
   }
 }
 
-
 /**
  * Spin
  */
@@ -382,33 +499,33 @@ svg {
 .u-spin {
   position: relative;
   -webkit-animation-name: spin;
-          animation-name: spin;
+  animation-name: spin;
   -webkit-animation-duration: 4000ms;
-          animation-duration: 4000ms;
+  animation-duration: 4000ms;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

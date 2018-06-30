@@ -7,9 +7,9 @@ series [How to Contribute to an Open Source Project on GitHub][egghead]
 
 ## Project setup
 
-1. Fork and clone the repo
-1. Run `npm install`
-1. Create a branch for your PR
+1.  Fork and clone the repo
+1.  Run `npm install`
+1.  Create a branch for your PR
 
 > Tip: Keep your `master` branch pointing at the original repository and make
 > pull requests from branches on your fork. To do this, run:
@@ -43,4 +43,4 @@ contribution, you can run it again and select the added contribution type.
 
 [egghead]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
 [all-contributors]: https://github.com/kentcdodds/all-contributors
-[issues]:https://github.com/alexcarpenter/frontend-foundations/issues
+[issues]: https://github.com/alexcarpenter/frontend-foundations/issues

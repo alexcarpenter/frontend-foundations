@@ -1,5 +1,5 @@
 ---
-layout: page.njk
+layout: markdown
 title: Success
 permalink: /discord/success/index.html
 ---
