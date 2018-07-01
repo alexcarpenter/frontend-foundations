@@ -7,18 +7,6 @@
     {
       "label": "Job Board",
       "url": "/job-board/"
-    },
-    {
-      "label": "Blog",
-      "url": "/blog/"
-    },
-    {
-      "label": "Discord",
-      "url": "/discord/"
-    },
-    {
-      "label": "FAQ",
-      "url": "/faq/"
     }
   ]
 }
