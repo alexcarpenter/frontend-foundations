@@ -6,7 +6,7 @@
   <header class="c-job-listing__header">
     <time>Posted on {{ params.date | readableDate }}</time>
     <h2 class="c-job-listing__title"><a href="">{{ params.title }} at {{ params.company }}</a></h2>    
-    <p>Type <strong>{{ params.type }}</strong> &bullet; Location <strong>{{ params.location }}</strong>{% if params.remote === true %} Remote &bullet; <strong>Available</strong>{% endif %}</p>
+    <p>Type <strong>{{ params.type }}</strong> &bullet; {% if params.offices === false %} <strong>Remote Only</strong> {% else %} Location <strong>{{ params.location }}</strong>{% if params.remote === true %} Remote &bullet; <strong>Available</strong>{% endif %}{% endif %}</p>
   </header>
   <div class="c-job-listing__description">
     {{- params.description | safe -}}
