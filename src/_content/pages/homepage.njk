@@ -3,6 +3,8 @@ permalink: /index.html
 ---
 {% extends "layouts/default.njk" %}
 
+{% from 'components/check-list.njk' import checkList %}
+
 {% block content %}
   <h1 class="c-heading-intro">A resource and community for developers learning <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, &amp; Javascript. Mostly for beginners–but everyone is welcome.</h1>
 
@@ -24,13 +26,30 @@ permalink: /index.html
           <br>
 
           <h2 class="c-heading-decorate">Roadmap</h2>
-          <ul class="c-checklist">
-            <li class="c-checklist__item c-checklist__item--completed"><span><a href="/job-board/">Job board</a> for entry level developers</span></li>
-            <li class="c-checklist__item">Monthly or bi-monthly <abbr title="Ask Me Anything">AMA</abbr>'s</li>
-            <li class="c-checklist__item">Blog tutorials and resources</li>
-            <li class="c-checklist__item">YouTube screencasts</li>
-            <li class="c-checklist__item">Maybe someday a conference</li>
-          </ul>
+          {{ checkList({
+            items: [
+              {
+                completed: true,
+                text: '<a href="/job-board/">Job board</a> for entry level developers'
+              },
+              {
+                completed: false,
+                text: 'Monthly or bi-monthly <abbr title="Ask Me Anything">AMA</abbr>\'s'
+              },
+              {
+                completed: false,
+                text: 'Blog tutorials and resources'
+              },
+              {
+                completed: false,
+                text: 'YouTube screencasts'
+              },
+              {
+                completed: false,
+                text: 'Maybe someday a conference'
+              }
+            ]
+          })}}
         </div>
       </div>
     </div>
