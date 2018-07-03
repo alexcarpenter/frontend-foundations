@@ -1,0 +1,7 @@
+{% macro checkList(params) %}
+<ul class="c-checklist">
+  {% for item in params.items %}
+    <li class="c-checklist__item{% if item.completed === true %} c-checklist__item--completed{% endif %}"><span>{{ item.text | safe }}</span></li>
+  {% endfor %}
+</ul>
+{% endmacro %}

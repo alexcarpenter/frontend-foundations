@@ -7,6 +7,10 @@
     {
       "label": "Job Board",
       "url": "/job-board/"
+    },
+    {
+      "label": "Blog",
+      "url": "/blog/"
     }
   ]
 }
