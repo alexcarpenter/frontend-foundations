@@ -9,6 +9,7 @@
   --color-tertiary: #fdbb2c;
   --color-gray-0: #111;
   --color-gray-20: #333;
+  --color-gray-50: #767676;
   --color-gray-70: #eee;
   --color-gray-100: #fafafa;
   --grid-gutter-size: 4rem;
@@ -21,6 +22,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -93,6 +95,10 @@ svg {
   vertical-align: middle;
 }
 
+abbr {
+  text-decoration: none;
+}
+
 /* ==========================================================================
    OBJECTS
    ========================================================================== */
@@ -103,7 +109,12 @@ svg {
 
 .o-grid {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   max-width: 100vw;
   margin: 0 calc(-0.5 * var(--grid-gutter-size))
@@ -111,6 +122,7 @@ svg {
 }
 
 .o-grid__item {
+  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   min-width: 0;
   margin-bottom: var(--grid-gutter-size);
@@ -183,12 +195,14 @@ svg {
   position: absolute;
   top: 0;
   left: 1rem;
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   padding: 0.5rem;
   background-color: var(--color-tertiary);
 }
 
 .c-skip-to:focus {
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -233,26 +247,54 @@ svg {
 
 .c-header {
   margin-bottom: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.c-header a {
+.c-header__branding {
   display: inline-block;
+  margin-right: 2rem;
 }
 
-.c-header a:focus {
+.c-header__branding:focus {
   background-color: transparent;
+}
+
+/**
+ * Navigation
+ */
+
+.c-navigation {
+  flex-grow: 1;
+}
+
+.c-navigation__primary {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-gray-70);
+}
+
+.c-navigation__secondary {
+  padding-top: 0.5rem;
+}
+
+.c-navigation__list {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.c-navigation__list-item:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.c-navigation__anchor {
+  text-decoration: none;
 }
 
 /**
  * Page header
  */
-
-@media screen and (min-width: 720px) {
-  .c-page-header {
-    padding-right: 2rem;
-    max-width: calc((2 / 3) * 100%);
-  }
-}
 
 .c-page-header__title {
   font-size: 2rem;
@@ -277,6 +319,13 @@ svg {
   font-size: 1.25rem;
 }
 
+@media screen and (min-width: 720px) {
+  .c-page-header__description {
+    padding-right: 2rem;
+    max-width: calc((2 / 3) * 100%);
+  }
+}
+
 /**
  * Button
  */
@@ -293,6 +342,7 @@ svg {
   font-weight: 700;
   border: 0;
   cursor: pointer;
+  -webkit-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
   text-decoration: none;
 }
@@ -374,6 +424,41 @@ svg {
 .c-prose h3,
 .c-prose h4 {
   margin-bottom: 0.5rem !important;
+}
+
+/**
+ * Checklist
+ */
+
+.c-checklist {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.c-checklist__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.c-checklist__item:not(:last-of-type) {
+  margin-bottom: 0.25rem;
+}
+
+.c-checklist__item:before {
+  content: '';
+  display: inline-block;
+  margin-right: 0.5rem;
+  width: 24px;
+  height: 24px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNOC45MzMuMzk1YzIuMzEyIDAgNC4yNi44NTQgNS44NDQgMi41NjMgMS40MzcgMS41NDEgMi4xNTYgMy4zNTQgMi4xNTYgNS40MzcgMCAyLjMxMy0uODU0IDQuMjYtMi41NjMgNS44NDQtMS41NDEgMS40MzctMy4zNTQgMi4xNTYtNS40MzcgMi4xNTYtMi4zMTMgMC00LjI2LS44NTQtNS44NDQtMi41NjJDMS42NTIgMTIuMjkuOTMzIDEwLjQ3OC45MzMgOC4zOTVjMC0yLjMxMi44NTQtNC4yNiAyLjU2Mi01Ljg0NEM1LjAzNyAxLjExNCA2Ljg1LjM5NSA4LjkzMy4zOTV6bTAgMTUuMzQ0YzIuMTY3IDAgMy45NzktLjgwMiA1LjQzNy0yLjQwNiAxLjI3MS0xLjQzOCAxLjkwNy0zLjA4NCAxLjkwNy00LjkzOCAwLTIuMTY3LS44MDItMy45OC0yLjQwNy01LjQzNy0xLjQzNy0xLjI3MS0zLjA4My0xLjkwNy00LjkzNy0xLjkwNy0yLjE2NyAwLTMuOTguODAyLTUuNDM4IDIuNDA3QzIuMjI1IDQuODk1IDEuNTkgNi41NCAxLjU5IDguMzk1YzAgMi4xNjcuODAyIDMuOTggMi40MDYgNS40MzggMS40MzggMS4yNyAzLjA4NCAxLjkwNiA0LjkzOCAxLjkwNnoiIGZpbGw9IiMzOTdERkIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+  background-size: 24px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.c-checklist__item--completed:before {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIuMDU1IDUuODMzYy4xNjYtLjE0Ni4zMzMtLjEyNS41LjA2Mi4wODMuMTQ2LjA3My4yODEtLjAzMi40MDZsLTUgNC42NTdjLS4wODMuMDYyLS4xNTYuMDkzLS4yMTguMDkzYS42OTcuNjk3IDAgMCAxLS4yNS0uMDkzTDUuMzk4IDkuM2MtLjE2Ni0uMTY2LS4xNTYtLjMzMy4wMzItLjUuMTQ1LS4wODMuMjkxLS4wNzMuNDM3LjAzMmwxLjQzOCAxLjQzNyA0Ljc1LTQuNDM3ek04Ljk2LjM5NWMyLjMxMiAwIDQuMjYuODU0IDUuODQ0IDIuNTYzIDEuNDM3IDEuNTQxIDIuMTU2IDMuMzU0IDIuMTU2IDUuNDM3IDAgMi4zMTMtLjg1NCA0LjI2LTIuNTYzIDUuODQ0LTEuNTQxIDEuNDM3LTMuMzU0IDIuMTU2LTUuNDM3IDIuMTU2LTIuMzEzIDAtNC4yNi0uODU0LTUuODQ0LTIuNTYyQzEuNjggMTIuMjkuOTYxIDEwLjQ3OC45NjEgOC4zOTVjMC0yLjMxMi44NTQtNC4yNiAyLjU2Mi01Ljg0NEM1LjA2NSAxLjExNCA2Ljg3OC4zOTUgOC45NjEuMzk1em0wIDE1LjM0NGMyLjE2NyAwIDMuOTc5LS44MDIgNS40MzctMi40MDYgMS4yNzEtMS40MzggMS45MDctMy4wODQgMS45MDctNC45MzggMC0yLjE2Ny0uODAyLTMuOTgtMi40MDctNS40MzctMS40MzctMS4yNzEtMy4wODMtMS45MDctNC45MzctMS45MDctMi4xNjcgMC0zLjk4LjgwMi01LjQzOCAyLjQwNy0xLjI3IDEuNDM3LTEuOTA2IDMuMDgzLTEuOTA2IDQuOTM3IDAgMi4xNjcuODAyIDMuOTggMi40MDYgNS40MzggMS40MzggMS4yNyAzLjA4NCAxLjkwNiA0LjkzOCAxLjkwNnoiIGZpbGw9IiMzOTdERkIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
 }
 
 /**
@@ -482,6 +567,8 @@ svg {
  */
 
 .c-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 2rem;
   border-top: 1px solid var(--color-gray-70);
@@ -489,6 +576,9 @@ svg {
 
 @media screen and (max-width: 600px) {
   .c-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }
@@ -508,21 +598,40 @@ svg {
    ========================================================================== */
 
 /**
+ * Visually hidden
+ */
+
+.u-visually-hidden {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/**
  * Widths
  */
 
 @media screen and (min-width: 600px) {
   .u-width-1of3 {
+    -ms-flex-preferred-size: auto !important;
     flex-basis: auto !important;
     width: calc(100% * 1 / 3) !important;
   }
 
   .u-width-1of2 {
+    -ms-flex-preferred-size: auto !important;
     flex-basis: auto !important;
     width: calc(100% * 1 / 2) !important;
   }
 
   .u-width-2of3 {
+    -ms-flex-preferred-size: auto !important;
     flex-basis: auto !important;
     width: calc(100% * 2 / 3) !important;
   }
