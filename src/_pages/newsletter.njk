@@ -16,14 +16,14 @@ permalink: /newsletter/
 {% endblock %}
 
 {% block secondary %}
-  {# <div class="c-aside">
+  <div class="c-aside">
     <div class="c-prose">
-      <h2>Previous Newsletters</h2>
-      <ol reversed>
+      <h2>Previous Issues</h2>
+      <ul>
         {% for item in newsletter.issues %}
-        <li>{{ item.date | readableDate }} - <a href="{{ item.url | safe }}">{{ item.title }}</a></li>
+        <li>{{ item.date | date_formatted }} - <a href="{{ item.url | safe }}">{{ item.title }}</a></li>
         {% endfor %}
-      </ol>
+      </ul>
     </div>
-  </div> #}
+  </div>
 {% endblock %}
