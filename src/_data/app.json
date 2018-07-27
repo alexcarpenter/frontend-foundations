@@ -1,7 +1,6 @@
 {
   "title": "Front-end Foundations",
-  "description":
-    "A resource and community for developers learning HTML, CSS, & Javascript. Mostly for beginners–but everyone is welcome.",
+  "description": "A resource and community for developers learning HTML, CSS, & Javascript. Mostly for beginners–but everyone is welcome.",
   "url": "https://frontend-foundations.com",
   "navigation": [
     {
@@ -9,8 +8,8 @@
       "url": "/job-board/"
     },
     {
-      "label": "Blog",
-      "url": "/blog/"
+      "label": "Newsletter",
+      "url": "/newsletter/"
     }
   ]
 }

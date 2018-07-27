@@ -3,7 +3,8 @@
     <ul class="c-navigation__list">
       {% for item in app.navigation %}
         <li class="c-navigation__list-item">
-          <a href="{{ item.url | safe }}" class="c-navigation__anchor">{{ item.label }}</a>
+          <a href="{{ item.url | safe }}" class="c-navigation__anchor" {% if page.url == item.url %}aria-current="page"{% endif %}
+          >{{ item.label }}</a>
         </li>
       {% endfor %}
     </ul>

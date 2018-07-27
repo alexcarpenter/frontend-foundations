@@ -5,6 +5,8 @@
   "author": "Alex Carpenter",
   "license": "MIT",
   "scripts": {
+    "build:styles": "npx postcss src/_assets/styles/app.css -o www/assets/styles/app.css --config=config/postcss.config.js",
+    "build:scripts": "rollup --config config/rollup.config.js",
     "build": "npx eleventy --config=config/eleventy.config.js --quiet",
     "serve": "npx eleventy --config=config/eleventy.config.js --serve",
     "clean": "rm -rf www",
@@ -14,9 +16,17 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.4.0",
     "@11ty/eleventy-plugin-rss": "^1.0.2",
+    "@ampproject/rollup-plugin-closure-compiler": "^0.4.3",
+    "@sindresorhus/slugify": "^0.3.0",
     "all-contributors-cli": "^5.2.0",
     "clean-css": "^4.1.11",
     "luxon": "^1.3.0",
+    "markdown-it": "^8.4.1",
+    "markdown-it-anchor": "^5.0.2",
+    "postcss-cli": "^5.0.1",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-preset-env": "^5.2.1",
+    "rollup": "^0.62.0",
     "uglify-js": "^3.4.1"
   }
 }

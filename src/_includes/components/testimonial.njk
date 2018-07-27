@@ -1,0 +1,6 @@
+{% macro testimonial(params) %}
+  <blockquote class="c-testimonial">
+    {{ params.text | markdownify | safe }}
+    <cite>&ndash; {{ params.cite }}</cite>
+  </blockquote>
+{% endmacro %}

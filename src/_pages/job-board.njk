@@ -13,6 +13,7 @@ permalink: /job-board/index.html
       {% for item in collections.jobs %}
         <li class="c-entry-listing__item">
           {{ jobListing({
+            url: item.url,
             date: item.data.date,
             title: item.data.title,
             company: item.data.company,
@@ -48,5 +49,8 @@ permalink: /job-board/index.html
 {% endblock %}
 
 {% block secondary %}
-  <p>Are you an entry level developer looking for your next gig? Subscribe to our RSS feed to find out when new job listings are posted.</p>
+{#   <div class="c-aside">
+    <h2 class="c-aside__heading">Subsection</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta veritatis aliquid, quo, eaque atque labore voluptatum, placeat porro rem alias architecto! Enim corporis, quia dolores, aut voluptas aliquid commodi aspernatur.</p>
+  </div> #}
 {% endblock %}
