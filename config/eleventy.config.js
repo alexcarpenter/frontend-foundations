@@ -74,6 +74,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('src/icons')
   eleventyConfig.addPassthroughCopy('src/sw.js')
+  eleventyConfig.addPassthroughCopy('src/assets/images')
 
   return {
     templateFormats: ['njk', 'md', 'html'],

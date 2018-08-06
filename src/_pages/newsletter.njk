@@ -5,12 +5,23 @@ permalink: /newsletter/
 {% extends 'layouts/page.njk' %}
 
 {% from 'components/testimonial.njk' import testimonial %}
+{% from 'components/reference.njk' import reference %}
 
 {% block primary %}
   <section>
     <div class="c-prose">
       <p>A curated newsletter highlighting foundational HTML, CSS, and Javascript resources and tutorials. Subscribe now and never miss an issue.</p>
       {% include 'components/newsletter.njk' %}
+
+      <hr>
+
+      {{ reference({
+        avatar: '/assets/images/claire-gersabeck.jpeg',
+        body: 'The Front-End Foundations Newsletter helps fill in the gaps of my knowledge with well-chosen resources that would be hard to seek out on my own. It has helped me improve as a developer!',
+        link: 'https://www.linkedin.com/in/claire-gersabeck/',
+        cite: 'Claire Gersabeck',
+        title: 'Front-end Developer'
+      }) }}
     </div>
   </section>
 {% endblock %}
