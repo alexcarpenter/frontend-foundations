@@ -32,7 +32,7 @@ permalink: /newsletter/
       <h2>Previous Issues</h2>
       <ul>
         {% for item in newsletter.issues %}
-        <li>{{ item.date | date_formatted }} - <a href="{{ item.url | safe }}">{{ item.title }}</a></li>
+        <li>#{{ item.id }} - <a href="{{ item.url | safe }}">{{ item.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
