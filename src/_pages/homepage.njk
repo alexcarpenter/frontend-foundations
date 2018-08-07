@@ -4,6 +4,7 @@ permalink: /index.html
 {% extends "layouts/default.njk" %}
 
 {% from 'components/check-list.njk' import checkList %}
+{% from 'components/reference.njk' import reference %}
 
 {% block content %}
   <h1 class="c-heading-intro">A resource and community for developers learning <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Stylesheets">CSS</abbr>, &amp; Javascript. Mostly for beginners–but everyone is welcome.</h1>
@@ -12,9 +13,17 @@ permalink: /index.html
     <div class="o-grid">
       <div class="o-grid__item u-width-1of2">
         <div class="c-prose">
-          <h2 class="c-heading-decorate">Join our <a href="https://discordapp.com/">Discord</a> community</h2>
-          <p>While we are building out some ideas, feel free to join our Discord community to start connecting with other front-end developers.</p>
-          {% include "components/form.njk" %}
+          <h2 class="c-heading-decorate">Join our weekly newsletter</h2>
+          <p>A curated newsletter highlighting foundational HTML, CSS, and Javascript resources and tutorials. Subscribe now and never miss an issue.</p>
+          {% include 'components/newsletter.njk' %}
+          <hr>
+          {{ reference({
+            avatar: '/assets/images/claire-gersabeck.jpeg',
+            body: 'The Front-End Foundations Newsletter helps fill in the gaps of my knowledge with well-chosen resources that would be hard to seek out on my own. It has helped me improve as a developer!',
+            link: 'https://www.linkedin.com/in/claire-gersabeck/',
+            cite: 'Claire Gersabeck',
+            title: 'Front-end Developer'
+          }) }}
         </div>
       </div>
 
@@ -22,9 +31,7 @@ permalink: /index.html
         <div class="c-prose">
           <h2 class="c-heading-decorate">Mission</h2>
           <p>It is our mission to help entry level front-end developers find their first job.</p>
-
           <br>
-
           <h2 class="c-heading-decorate">Roadmap</h2>
           {{ checkList({
             items: [
@@ -43,10 +50,6 @@ permalink: /index.html
               {
                 completed: false,
                 text: 'Podcast'
-              },
-              {
-                completed: false,
-                text: 'Digital Book'
               },
               {
                 completed: false,
